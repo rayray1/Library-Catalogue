@@ -26,5 +26,6 @@ urlpatterns = [
     path('catalogue/', include('catalogue.urls')),
     # redirect catalogue
     path('', RedirectView.as_view(url='/catalogue/', permanent=True)),
+    path('accounts/', include('django.contrib.auth.urls')),
     # url mapping to serve static files during development (only)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT )
